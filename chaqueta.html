@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chaqueta Bomber – Redrop Bolivia</title>
+  <style>
+    body { font-family: sans-serif; background: #f3f3f3; padding: 20px; }
+    .container { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+    h1 { margin-top: 0; }
+    .carousel-wrapper { position: relative; text-align: center; }
+    .carousel-img { height: 280px; border-radius: 10px; width: auto; }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .button {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Botón para volver atrás -->
+    <a href="index.html" style="
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #555;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+       font-weight: bold;
+    ">
+      ← Volver al catálogo
+    </a>
+    <h1>Chaqueta Bomber Camuflada</h1>
+    <div class="carousel-wrapper">
+      <button class="carousel-button prev" onclick="changeImage(-1)">←</button>
+      <img id="carousel-img" class="carousel-img" src="fotos/chaqueta/1.jpg" alt="Chaqueta">
+      <button class="carousel-button next" onclick="changeImage(1)">→</button>
+    </div>
+
+    <p><strong>Nombre:</strong> Chaqueta Bomber Camuflada</p>
+    <p><strong>Descripción breve:</strong> Chaqueta Bomber estilo militar con Camuflaje suave</p>
+    <p><strong>Talla:</strong> L</p>
+    <p><strong>Estado:</strong> 9/10</p>
+    <p><strong>Precio:</strong> 80 Bs</p>
+
+    <a class="button" href="https://wa.me/59176557962?text=Hola%2C%20quiero%20comprar%20la%20chaqueta%20bomber%20camuflada.">Comprar por WhatsApp</a>
+  </div>
+
+  <script>
+    const totalImages = 5; // Cambia este número según la cantidad de fotos
+    let currentImage = 1;
+
+    function changeImage(step) {
+      currentImage += step;
+      if (currentImage < 1) currentImage = totalImages;
+      if (currentImage > totalImages) currentImage = 1;
+      document.getElementById("carousel-img").src = `fotos/chaqueta/${currentImage}.jpg`;
+    }
+  </script>
+</body>
+</html>

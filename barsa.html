@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Polera Barcelona 13/14 – Redrop Bolivia</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      height: 400px; /* altura fija */
+      margin: 20px 0;
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden; /* ocultar imágenes fuera del área */
+    }
+    .carousel img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      user-select: none;
+    }
+    .carousel img.active {
+      opacity: 1;
+      z-index: 1;
+      position: absolute;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 28px;
+      border-radius: 50%;
+      user-select: none;
+      z-index: 2;
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
+    }
+    .button {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Botón para volver atrás -->
+    <a href="index.html" style="
+     display: inline-block;
+     margin-bottom: 20px;
+     background-color: #555;
+     color: white;
+     padding: 10px 18px;
+     border-radius: 8px;
+     text-decoration: none;
+     font-weight: bold;
+    ">
+     ← Volver al catálogo
+    </a>
+
+    <h1>Polera Barcelona 13/14</h1>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel">
+        <img src="fotos/barsa/1.jpg" alt="Foto 1" class="active" />
+        <img src="fotos/barsa/2.jpg" alt="Foto 2" />
+        <img src="fotos/barsa/3.jpg" alt="Foto 3" />
+        <img src="fotos/barsa/4.jpg" alt="Foto 4" />
+        <img src="fotos/barsa/5.jpg" alt="Foto 5" />
+      </div>
+      <button class="arrow arrow-left" onclick="prevSlide()">‹</button>
+      <button class="arrow arrow-right" onclick="nextSlide()">›</button>
+    </div>
+
+    <p><strong>Nombre:</strong> Polera Barcelona 13/14</p>
+    <p><strong>Descripción breve:</strong> Polera de fútbol de Barcelona 13/14 - camiseta local - Neymar #11</p>
+    <p><strong>Talla:</strong> M</p>
+    <p><strong>Estado:</strong> 8/10</p>
+    <p><strong>Precio:</strong> 40 Bs</p>
+
+    <a class="button" href="https://wa.me/59176557962?text=Hola%2C%20quiero%20comprar%20la%20polera%20Barcelona%2013%2F14%20Neymar%20%2311">Comprar por WhatsApp</a>
+  </div>
+
+  <script>
+    const carouselImages = document.querySelectorAll('#carousel img');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      if (index < 0) {
+        currentIndex = carouselImages.length - 1;
+      } else if (index >= carouselImages.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      carouselImages.forEach((img, i) => {
+        img.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+  </script>
+</body>
+</html>

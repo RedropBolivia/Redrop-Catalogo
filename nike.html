@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Short Nike de fútbol – Redrop Bolivia</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      height: 100%;
+    }
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+    }
+    .arrow.left {
+      left: 10px;
+    }
+    .arrow.right {
+      right: 10px;
+    }
+    .button {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Botón para volver atrás -->
+    <a href="index.html" style="
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #555;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    ">
+      ← Volver al catálogo
+    </a>
+
+
+
+    <h1>Short Nike de fútbol</h1>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel">
+        <img src="fotos/nike/1.jpg" alt="Foto 1" />
+        <img src="fotos/nike/2.jpg" alt="Foto 2" />
+        <img src="fotos/nike/3.jpg" alt="Foto 3" />
+      </div>
+      <button class="arrow left" onclick="moveSlide(-1)">❮</button>
+      <button class="arrow right" onclick="moveSlide(1)">❯</button>
+    </div>
+
+    <p><strong>Nombre:</strong> Short Nike de fútbol</p>
+    <p><strong>Descripción breve:</strong> Short para fútbol color azul marino</p>
+    <p><strong>Talla:</strong> L</p>
+    <p><strong>Estado:</strong> 8/10</p>
+    <p><strong>Precio:</strong> 25 Bs</p>
+
+    <a class="button" href="https://wa.me/59176557962?text=Hola%2C%20quiero%20comprar%20el%20short%20Nike%20de%20f%C3%BAtbol">Comprar por WhatsApp</a>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    function moveSlide(direction) {
+      const carousel = document.getElementById("carousel");
+      const images = carousel.querySelectorAll("img");
+      const total = images.length;
+      currentIndex = (currentIndex + direction + total) % total;
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pantalón corto – Redrop Bolivia</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f3f3f3;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 350px;
+      margin: 15px 0;
+    }
+
+    .image-container img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Botón para volver atrás -->
+    <a href="index.html" style="
+     display: inline-block;
+     margin-bottom: 20px;
+     background-color: #555;
+     color: white;
+     padding: 10px 18px;
+     border-radius: 8px;
+     text-decoration: none;
+     font-weight: bold;
+    ">
+     ← Volver al catálogo
+    </a>
+    <h1>Pantalón corto</h1>
+    
+    <div class="image-container">
+      <span class="arrow left" onclick="changeImage(-1)">‹</span>
+      <img id="carousel-image" src="fotos/corto/1.jpg" alt="Pantalón corto gris oscuro">
+      <span class="arrow right" onclick="changeImage(1)">›</span>
+    </div>
+
+    <p><strong>Nombre:</strong> Pantalón corto gris oscuro</p>
+    <p><strong>Descripción breve:</strong> Corto cargo gris oscuro para hombre</p>
+    <p><strong>Talla:</strong> 40</p>
+    <p><strong>Estado:</strong> 10/10</p>
+    <p><strong>Precio:</strong> 50 Bs</p>
+
+    <a class="button" href="https://wa.me/59176557962?text=Hola%2C%20quiero%20comprar%20el%20pantal%C3%B3n%20corto%20gris%20oscuro">Comprar por WhatsApp</a>
+  </div>
+
+  <script>
+    const images = [
+      "fotos/corto/1.jpg",
+      "fotos/corto/2.jpg",
+      "fotos/corto/3.jpg",
+      "fotos/corto/4.jpg"
+    ];
+    let currentIndex = 0;
+
+    function changeImage(direction) {
+      currentIndex = (currentIndex + direction + images.length) % images.length;
+      document.getElementById("carousel-image").src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>
