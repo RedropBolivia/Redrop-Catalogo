@@ -69,7 +69,8 @@
 </head>
 <body>
   <div class="container">
-    <!-- Botón para volver atrás -->
+
+    <!-- Botón para volver al catálogo principal -->
     <a href="index.html" style="
       display: inline-block;
       margin-bottom: 20px;
@@ -83,12 +84,13 @@
       ← Volver al catálogo
     </a>
 
-
-
+    <!-- CAMBIA ESTE TÍTULO SEGÚN EL PRODUCTO -->
     <h1>Short Nike de fútbol</h1>
-    
+
+    <!-- Carrusel de imágenes -->
     <div class="carousel-wrapper">
       <div class="carousel" id="carousel">
+        <!-- CAMBIA LAS IMÁGENES SEGÚN TU PRODUCTO -->
         <img src="fotos/nike/1.jpg" alt="Foto 1" />
         <img src="fotos/nike/2.jpg" alt="Foto 2" />
         <img src="fotos/nike/3.jpg" alt="Foto 3" />
@@ -97,15 +99,18 @@
       <button class="arrow right" onclick="moveSlide(1)">❯</button>
     </div>
 
+    <!-- Detalles del producto -->
     <p><strong>Nombre:</strong> Short Nike de fútbol</p>
     <p><strong>Descripción breve:</strong> Short para fútbol color azul marino</p>
     <p><strong>Talla:</strong> L</p>
     <p><strong>Estado:</strong> 8/10</p>
     <p><strong>Precio:</strong> 25 Bs</p>
 
+    <!-- Botón de compra por WhatsApp (ya incluye el mensaje personalizado) -->
     <a class="button" href="https://wa.me/59176557962?text=Hola%2C%20quiero%20comprar%20el%20short%20Nike%20de%20f%C3%BAtbol">Comprar por WhatsApp</a>
   </div>
 
+  <!-- Script para mover el carrusel -->
   <script>
     let currentIndex = 0;
     function moveSlide(direction) {
